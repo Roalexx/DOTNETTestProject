@@ -23,7 +23,7 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            if(product.ProductName.Length <2)
+            if (product.ProductName.Length < 2)
             {
                 return new ErrorResult(Messeages.ProductNameInvalid);
             }
@@ -39,17 +39,17 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Product>>(Messeages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messeages.ProductsListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messeages.ProductsListed);
         }
 
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
-            return  new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
         }
 
         public IDataResult<Product> GetById(int productId)
         {
-            return  new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
         public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
