@@ -9,9 +9,9 @@ namespace Core.Utilities.Secutiry.Encryption
 {
     public class SigningCredantialHelper
     {
-        public static SigningCredentials CreatSigningCredantials(SecurityKey security)
+        public static SigningCredentials CreateSigningCredentials(SecurityKey securityKey)
         {
-            return new SigningCredentials(security, SecurityAlgorithms.HmacSha512Signature);
+            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
         }
     }
 }
