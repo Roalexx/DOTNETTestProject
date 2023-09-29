@@ -11,7 +11,7 @@ namespace Core.Utilities.Secutiry.Encryption
     {
         public static SigningCredentials CreateSigningCredentials(SecurityKey securityKey)
         {
-            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
+            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);
         }
     }
 }
